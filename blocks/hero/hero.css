@@ -9,11 +9,18 @@
   min-height: 300px;
 }
 
-.hero h1 {
+.hero h1, .hero p {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
+}
+
+.hero p:not(.button-container) strong {
+  color: black;
+  border-width: 2px;
+  background-color: #fcfcfc;
+  padding: .5rem .5rem .25rem;
 }
 
 .hero picture {

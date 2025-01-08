@@ -20,8 +20,8 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: visby-regular, sans-serif;
+  --heading-font-family: acceptance-bold, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -187,6 +187,24 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: .4px;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-family: acceptance-bold, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+a.button.primary {
+  background-color: #cf9400;
+  color: #171714;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 2.4em;
 }
 
 a.button:hover,
