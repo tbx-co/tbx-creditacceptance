@@ -1,54 +1,92 @@
 /* stylelint-disable max-line-length */
 @font-face {
-  font-family: roboto-condensed;
+  font-family: 'Visibly Regular';
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-condensed-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: visby-regular;
-  font-style: normal;
-  font-weight: 400;
   font-display: swap;
   src: url('../fonts/visby-regular.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: acceptance-bold;
+  font-family: 'Acceptance Bold';
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
   src: url('../fonts/acceptance-bold.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+@font-face {
+  font-family: 'Acceptance DemiBold';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/acceptance-demibold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Acceptance ExtraBold';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/acceptance-extrabold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Acceptance Medium';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/acceptance-medium.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* fallback font for Acceptance Bold (normal - 400) */
+@font-face {
+  font-family: acceptance-bold-fallback;
+  size-adjust: 101.1%;
+  src: local("Arial");
+}
+
+/* fallback font for Acceptance DemiBold (normal - 400) */
+@font-face {
+  font-family: acceptance-demibold-fallback;
+  size-adjust: 100.181%;
+  src: local("Arial");
+}
+
+/* fallback font for Acceptance ExtraBold (normal - 400) */
+@font-face {
+  font-family: acceptance-extrabold-fallback;
+  size-adjust: 101.491%;
+  src: local("Arial");
+}
+
+/* fallback font for Acceptance Medium (normal - 400) */
+@font-face {
+  font-family: acceptance-medium-fallback;
+  size-adjust: 99.689%;
+  src: local("Arial");
+}
+
+
+    /* fallback font for Visby Regular (normal - 400) */
+    @font-face {
+      font-family: visby-regular-fallback;
+      size-adjust: 106.181%;
+      src: local("Arial");
+    }
+
+    /* fallback font for Visby DemiBold (normal - 400) */
+    @font-face {
+      font-family: "visby-demibold-normal-400-fallback";
+      size-adjust: 110.431%;
+      src: local("Arial");
+    }
+
+    /* fallback font for Visby Medium (normal - 400) */
+    @font-face {
+      font-family: "visby-medium-normal-400-fallback";
+      size-adjust: 107.991%;
+      src: local("Arial");
+    }
+
