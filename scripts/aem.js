@@ -460,6 +460,9 @@ function decorateIcons(element, prefix = '') {
  */
 function decorateSections(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
+    // wrapping the section with section-outer for background styling
+    const sectionOuter = document.createElement('div');
+    sectionOuter.classList.add('section-outer');
     const wrappers = [];
     let defaultContent = false;
     [...section.children].forEach((e) => {
@@ -471,10 +474,13 @@ function decorateSections(main) {
       }
       wrappers[wrappers.length - 1].append(e);
     });
+    // wrap section content and its children in section-outer
+    sectionOuter.append(section);
+    main.append(sectionOuter);
     wrappers.forEach((wrapper) => section.append(wrapper));
     section.classList.add('section');
-    section.dataset.sectionStatus = 'initialized';
-    section.style.display = 'none';
+    sectionOuter.dataset.sectionStatus = 'initialized';
+    sectionOuter.style.display = 'none';
 
     // Process section metadata
     const sectionMeta = section.querySelector('div.section-metadata');
@@ -486,9 +492,12 @@ function decorateSections(main) {
             .split(',')
             .filter((style) => style)
             .map((style) => toClassName(style.trim()));
+          // style name is appended to div.section
           styles.forEach((style) => section.classList.add(style));
+        } else if (key === 'background') {
+          sectionOuter.dataset[toCamelCase(key)] = meta[key];
         } else {
-          section.dataset[toCamelCase(key)] = meta[key];
+          sectionOuter.dataset[toCamelCase(key)] = meta[key].toLowerCase().trim().replaceAll(' ', '-');
         }
       });
       sectionMeta.parentNode.remove();
@@ -694,7 +703,7 @@ async function loadSection(section, loadCallback) {
  */
 
 async function loadSections(element) {
-  const sections = [...element.querySelectorAll('div.section')];
+  const sections = [...element.querySelectorAll('div.section-outer')];
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);
