@@ -1,9 +1,9 @@
 # Your Project's Title...
-Your project's description...
+Edge Delivery Project for www.creditacceptance.com
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--creditacceptance--aemsites.aem.page
+- Live: https://main--creditacceptance--aemsites.aem.live
 
 ## Documentation
 

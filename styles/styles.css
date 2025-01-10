@@ -18,10 +18,45 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
 
   /* fonts */
-  --body-font-family: visby-regular, sans-serif;
-  --heading-font-family: acceptance-bold, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'Visibly Regular', sans-serif;
+  --heading-font-family: 'Acceptance Bold', acceptance-bold-fallback, sans-serif;
+  --ff-acceptance-demi-bold: 'Acceptance DemiBold', acceptance-demi-bold-fallback, sans-serif;
+  --ff-acceptance-extra-bold: 'Acceptance ExtraBold', acceptance-extrabold-fallback, sans-serif;
+  --ff-acceptance-medium: 'Acceptance Medium', acceptance-medium-normal-400-fallback, sans-serif;
+  --ff-arial: 'Arial', sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -31,43 +66,22 @@
   /* heading sizes */
   --heading-font-size-xxl: 55px;
   --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 22px;
+
+  /* font weights */
+   --font-weight-light: 300;
+   --font-weight-normal: 400;
+   --font-weight-medium: 500;
+   --font-weight-bold: 600;
+   --font-weight-extra-bold: 700;
 
   /* nav height */
   --nav-height: 64px;
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+*, ::before, ::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -104,18 +118,32 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
+h1 { 
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: 50px;
+}
+h2 { 
+  font-size: var(--heading-font-size-l);
+  font-family: var(--ff-acceptance-medium);
+  margin-bottom: 0.75rem;
+}
+h3 { 
+  font-size: var(--heading-font-size-medium); 
+  line-height: 24px;
+  margin-bottom: 0.75rem;
+}
+h4 { 
+  font-size: var(--heading-font-size-m);
+}
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
@@ -127,6 +155,10 @@ pre,
 blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+}
+
+.center {
+  text-align: center;
 }
 
 code,
@@ -193,7 +225,7 @@ button {
   font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
-  font-family: acceptance-bold, sans-serif;
+  font-family: Acceptance Bold, sans-serif;
   box-sizing: border-box;
   text-decoration: none;
 }
