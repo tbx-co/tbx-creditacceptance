@@ -67,3 +67,26 @@
   size-adjust: 99.689%;
   src: local("Arial");
 }
+
+
+    /* fallback font for Visby Regular (normal - 400) */
+    @font-face {
+      font-family: visby-regular-fallback;
+      size-adjust: 106.181%;
+      src: local("Arial");
+    }
+
+    /* fallback font for Visby DemiBold (normal - 400) */
+    @font-face {
+      font-family: "visby-demibold-normal-400-fallback";
+      size-adjust: 110.431%;
+      src: local("Arial");
+    }
+
+    /* fallback font for Visby Medium (normal - 400) */
+    @font-face {
+      font-family: "visby-medium-normal-400-fallback";
+      size-adjust: 107.991%;
+      src: local("Arial");
+    }
+

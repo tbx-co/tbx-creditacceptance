@@ -15,7 +15,7 @@
   --background-color: white;
   --light-color: #f8f8f8;
   --dark-color: #505050;
-  --text-color: #131313;
+  --text-color: #171714;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
   --bs-blue: #0d6efd;
@@ -51,7 +51,7 @@
   --bs-dark: #212529;
 
   /* fonts */
-  --body-font-family: 'Visibly Regular', sans-serif;
+  --body-font-family: 'Visibly Regular', visby-regular-fallback, sans-serif;
   --heading-font-family: 'Acceptance Bold', acceptance-bold-fallback, sans-serif;
   --ff-acceptance-demi-bold: 'Acceptance DemiBold', acceptance-demi-bold-fallback, sans-serif;
   --ff-acceptance-extra-bold: 'Acceptance ExtraBold', acceptance-extrabold-fallback, sans-serif;
@@ -59,9 +59,8 @@
   --ff-arial: 'Arial', sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 10px;
 
   /* heading sizes */
   --heading-font-size-xxl: 55px;
@@ -159,6 +158,12 @@ pre,
 blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+}
+
+p {
+  font-size: var(--body-font-size-m);
+  line-height: 26px;
+  color: var(--text-color);
 }
 
 .center {
