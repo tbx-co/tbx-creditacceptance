@@ -269,7 +269,7 @@ header nav .nav-tools {
   grid-area: tools;
   margin: auto 0;
 
-  > .default-content-wrapper{
+  > .section > .default-content-wrapper{
     display: flex;
     gap: 20px;
   }
