@@ -409,6 +409,7 @@ function decorateButtons(element) {
         ) {
           a.className = 'button primary';
           twoup.classList.add('button-container');
+          up.replaceWith(...up.childNodes);
         }
         if (
           up.childNodes.length === 1
@@ -418,9 +419,8 @@ function decorateButtons(element) {
         ) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
+          up.replaceWith(...up.childNodes);
         }
-        // unwrap a from up
-        up.replaceWith(...up.childNodes);
       }
     }
   });
