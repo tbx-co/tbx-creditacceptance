@@ -49,6 +49,11 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
+  --gold: #ffb800;
+  --mustard: #cf9400;
+  --secondary-btn-border: #2b4361;
+  --secondary-btn-border-hover: #0A293B;
+  --very-light-gray: #fcfcfc;
 
   /* fonts */
   --body-font-family: 'Visibly Regular', visby-regular-fallback, sans-serif;
@@ -207,43 +212,30 @@ a.button:any-link,
 button {
   display: inline-block;
   max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-style: normal;
-  font-weight: 500;
-  background-color: var(--link-color);
-  color: var(--background-color);
   cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   text-align: center;
   justify-content: center;
   letter-spacing: .4px;
   font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
-  box-sizing: border-box;
+  font-family: var(--heading-font-family);
   text-decoration: none;
 }
 
 a.button.primary {
-  background-color: #cf9400;
-  color: #171714;
-    border: 1px solid rgb(255 255 255 / 0%);
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 2.4em;
+  background-color: var(--gold);
+  color: var(--text-color);
+  border: 1px solid rgba(255 255 255 0%);
+  padding: .5rem 1.5rem;
+  border-radius: .375rem;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
+  background-color: var(--mustard);
 }
 
 button:disabled,
@@ -254,9 +246,18 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  border: 2px solid var(--secondary-btn-border);
+  border-radius: 19px;
+  background-color: var(--very-light-gray);
+  color: var(--secondary-btn-border);
+  padding: .3rem 2rem;
+}
+
+a.button.secondary:focus,
+button.secondary:focus, a.button.secondary:hover,
+button.secondary:hover {
+  border: 3px solid var(--secondary-btn-border-hover);
+  color: var(--secondary-btn-border-hover);
 }
 
 main img {
