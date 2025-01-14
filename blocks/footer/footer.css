@@ -13,7 +13,46 @@ footer .footer p {
   margin: 0;
 }
 
-@media (width >= 900px) {
+.footer .default-content-wrapper {
+    margin-block-start: 48px;
+}
+
+.footer .default-content-wrapper ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-inline: -12px;
+    margin-block: 0 16px;
+}
+
+.footer .default-content-wrapper ul li {
+    padding-inline: 12px;
+    list-style-type: none;
+    border-right: 1px solid #1b1b1b;
+    font-size: 12px;
+    line-height: 24px;
+    color: #3d5470;
+    width: 100%;
+}
+
+.footer .default-content-wrapper p ,
+.footer .default-content-wrapper ul li a {
+    font-size: 12px;
+    color: #3d5470;
+}
+
+.footer .default-content-wrapper p {
+    margin-block-end: 16px;
+}
+
+
+@media screen and (width >= 768px) {
+    .footer .default-content-wrapper ul li {
+        width: auto;
+    } 
+}
+
+@media (width >= 992px) {
   footer .footer > div {
     padding: 40px 32px 24px;
   }
