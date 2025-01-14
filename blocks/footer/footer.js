@@ -13,8 +13,17 @@ export default async function decorate(block) {
 
   // decorate footer DOM
   block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+  while (fragment.firstElementChild) block.append(fragment.firstElementChild);
 
-  block.append(footer);
+  let footerImagesContainer;
+  block.querySelectorAll('.default-content-wrapper > p').forEach((p) => {
+    if (p.textContent.toLocaleLowerCase() === 'footer-images:') {
+      footerImagesContainer = p.nextElementSibling;
+      p.remove();
+    }
+  });
+
+  if (footerImagesContainer) {
+    footerImagesContainer.className = 'footer-images-container';
+  }
 }

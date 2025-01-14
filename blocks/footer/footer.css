@@ -5,8 +5,7 @@ footer {
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 40px 12px 12px;
 }
 
 footer .footer p {
@@ -28,16 +27,21 @@ footer .footer p {
 .footer .default-content-wrapper ul li {
     padding-inline: 12px;
     list-style-type: none;
-    border-right: 1px solid #1b1b1b;
     font-size: 12px;
+    font-weight: 500;
     line-height: 24px;
     color: #3d5470;
     width: 100%;
 }
 
+.footer .default-content-wrapper ul li:not(:last-child){
+        border-right: 1px solid #1b1b1b;
+}
+
 .footer .default-content-wrapper p ,
 .footer .default-content-wrapper ul li a {
     font-size: 12px;
+    font-weight: 500;
     color: #3d5470;
 }
 
@@ -45,6 +49,25 @@ footer .footer p {
     margin-block-end: 16px;
 }
 
+.footer .footer-images-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    margin-block-start: 24px;
+    padding-block: 48px;
+
+}
+
+.footer .footer-images-container a {
+    flex-shrink: 0;
+}
+
+.footer .footer-images-container .icon {
+    width: unset;
+    height: unset;
+}
 
 @media screen and (width >= 768px) {
     .footer .default-content-wrapper ul li {
