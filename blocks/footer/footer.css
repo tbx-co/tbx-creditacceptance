@@ -49,7 +49,7 @@ footer .footer p {
     margin-block-end: 16px;
 }
 
-.footer .footer-images-container {
+.footer .default-content-wrappe .footer-images-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -60,7 +60,7 @@ footer .footer p {
 
 }
 
-.footer .footer-images-container a {
+.footer .default-content-wrappe .footer-images-container a {
     flex-shrink: 0;
 }
 
