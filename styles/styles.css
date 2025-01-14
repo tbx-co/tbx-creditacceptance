@@ -54,7 +54,6 @@
   --secondary-btn-border: #2b4361;
   --secondary-btn-border-hover: #0A293B;
   --very-light-gray: #fcfcfc;
-
   --buton-bg-blue: #c4eefa;
 
   /* fonts */
@@ -291,10 +290,7 @@ main img {
 .block .background {
     overflow: hidden;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    inset: 0;
     z-index: -1;
 }
 

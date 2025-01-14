@@ -59,9 +59,9 @@ main > .section-outer > .section.marquee-container {
     font-family: var(--ff-acceptance-extra-bold);
 }
 
-@media screen and (width >= 576px) {
+/* @media screen and (width >= 576px) {
     .marquee {}
-}
+} */
 
 @media screen and (width >= 768px) {
     .marquee .foreground > div {
@@ -69,7 +69,7 @@ main > .section-outer > .section.marquee-container {
     }
 }
 
-@media screen and (width >= 992px) {
+/* @media screen and (width >= 992px) {
     .marquee {}
 }
 
@@ -79,4 +79,4 @@ main > .section-outer > .section.marquee-container {
 
 @media screen and (width >= 1400px) {
     .marquee {}
-}
+} */
