@@ -85,6 +85,10 @@ footer .footer p {
     color: #2b4361;
 }
 
+.footer .accordion.sitemap details summary p {
+    margin: 0;
+}
+
 .footer .accordion.sitemap .accordion-item-body {
     margin-block-start: 16px;
 }
