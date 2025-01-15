@@ -103,6 +103,16 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+function loadSecondaryNavFragment(navChildFragmentLink, secondaryNav) {
+  const navChildFragmentPath = navChildFragmentLink.getAttribute('href');
+  loadFragment(navChildFragmentPath).then((fragment) => {
+    const columns = fragment.querySelectorAll('.columns');
+    if (columns.length) {
+      secondaryNav.append(columns[0]);
+    }
+  });
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -135,7 +145,24 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      if (navSection.querySelector('ul')) {
+        navSection.classList.add('nav-drop');
+        const secondaryNav = document.createElement('div');
+        secondaryNav.className = 'nav-secondary';
+        const navChildFragmentLink = navSection.querySelectorAll('a[href*="/fragment"]');
+        if (navChildFragmentLink.length > 1) {
+          if (isDesktop.matches) {
+            loadSecondaryNavFragment(navChildFragmentLink[0], secondaryNav);
+          } else {
+            loadSecondaryNavFragment(navChildFragmentLink[1], secondaryNav);
+          }
+          navChildFragmentLink[0].closest('ul').remove();
+        } else if (navChildFragmentLink.length) {
+          loadSecondaryNavFragment(navChildFragmentLink[0], secondaryNav);
+          navChildFragmentLink[0].closest('ul').remove();
+        }
+        navSection.append(secondaryNav);
+      }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';

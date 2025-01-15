@@ -102,6 +102,18 @@ body.appear {
   display: block;
 }
 
+picture {
+  line-height: 0;
+  display: block;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  border-style: none;
+}
+
 header {
   height: var(--nav-height);
 }
