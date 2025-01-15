@@ -145,6 +145,12 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      //wrap the content within the navSection in a span
+      const navSectionContent = navSection.innerHTML;
+      navSection.innerHTML = '';
+      const navSectionContentWrapper = document.createElement('span');
+      navSectionContentWrapper.innerHTML = navSectionContent;
+      navSection.append(navSectionContentWrapper);
       if (navSection.querySelector('ul')) {
         navSection.classList.add('nav-drop');
         const secondaryNav = document.createElement('div');

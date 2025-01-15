@@ -189,7 +189,11 @@ header nav .nav-sections ul {
   font-size: var(--body-font-size-s);
 }
 
-header nav .nav-sections ul > li, header .nav-tools li > a {
+header nav .nav-sections ul > li:hover{
+  color: #171714;
+}
+
+header nav .nav-sections ul > li > span, header .nav-tools li > a {
   font-weight: 600;
   color: #171714;
   font-size: 12px;
@@ -231,6 +235,37 @@ header .nav-tools li > a {
     display: block;
     visibility: visible;
     white-space: nowrap;
+    height: 100%;
+
+    .section{
+      height: 100%;
+
+      > .default-content-wrapper {
+        height: 100%;
+
+        >ul {
+          height: 100%;
+
+          >li , >li > span {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+
+            > li {
+            padding: 0 16px;
+            }
+
+            >li:hover {
+              background-color: #fcfcfc !important;
+              box-shadow: 0 4px #ffb800;
+              border-radius: 4px;
+            }
+        }
+      }
+    }
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -243,12 +278,11 @@ header .nav-tools li > a {
     cursor: pointer;
   }
 
-  header nav .nav-sections .nav-drop::after {
+  header nav .nav-sections .nav-drop span::after {
+    position: relative;
     content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
     right: 2px;
+    left: 5px;
     transform: rotate(135deg);
     width: 6px;
     height: 6px;
@@ -274,12 +308,12 @@ header .nav-tools li > a {
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul, .nav-secondary {
+  header nav .nav-sections .default-content-wrapper > ul > li > span > ul, .nav-secondary {
     display: none;
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > span > ul {
     display: block;
     position: absolute;
     left: -24px;
