@@ -1,6 +1,13 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+function slugify(text) {
+  if (!text) return '';
+
+  return text.toString().toLowerCase().trim()
+    .replace(/\s+/g, '-')
+    .replace(/:$/g, '');
+}
 /**
  * loads and decorates the footer
  * @param {Element} block The footer block element
@@ -17,12 +24,11 @@ export default async function decorate(block) {
 
   let footerImagesContainer;
   block.querySelectorAll('.default-content-wrapper > p').forEach((p) => {
-    if (p.textContent.toLocaleLowerCase() === 'footer-images:') {
+    if (slugify(p.textContent) === 'footer-images') {
       footerImagesContainer = p.nextElementSibling;
       p.remove();
     }
   });
-
   if (footerImagesContainer) {
     footerImagesContainer.className = 'footer-images-container';
   }
