@@ -334,50 +334,18 @@ main > .section-outer > .section.width-75 > div {
 }
 
 @media screen and (width >= 576px) {
-  main > .section-outer > .section,
-  .block .container {
-    max-width: 540px;
-  }
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 540px;
+    }
 }
 
 @media screen and (width >= 768px) {
-   main > .section-outer > .section,
-   .block .container {
-    max-width: 720px;
-  }
-}
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 720px;
+    }
 
-@media screen and (width >= 992px) {
-   main > .section-outer > .section,
-   .block .container {
-    max-width: 960px;
-  }
-}
-
-@media screen and (width >= 1200px) {
-   main > .section-outer > .section,
-   .block .container {
-    max-width: 1140px;
-  }
-}
-
-@media screen and (width >= 1400px) {
-   main > .section-outer > .section,
-   .block .container {
-    max-width: 1320px;
-  }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}
-
-/* Tablet up */
-@media screen and (width >= 768px) {
     .block .background .mobile-only,
     .block .background .desktop-only {
         display: none;
@@ -388,14 +356,40 @@ main .section.highlight {
     }
 }
 
-/* desktop up */
+@media screen and (width >= 992px) {
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 960px;
+    }
+}
+
 @media screen and (width >= 1200px) {
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 1140px;
+    }
+
     .block .background .mobile-only,
     .block .background .tablet-only {
-      display: none;
+        display: none;
     }
-  
+
     .block .background .desktop-only {
-      display: block;
+        display: block;
     }
+}
+
+@media screen and (width >= 1400px) {
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 1320px;
+    }
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 40px 0;
 }
