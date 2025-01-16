@@ -2,7 +2,7 @@
 
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: #f8f9fa;
+  background-color: var(--light-gray);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -367,20 +367,22 @@ header .nav-tools li > a {
     a.button:any-link{
       padding: .5rem 0;
       font-family: var(--ff-acceptance-demi-bold);
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.87);
+      font-weight: var(--font-weight-bold);
+      color: black;
       line-height: 24px;
       text-align: left;
       white-space: nowrap;
+      cursor: pointer !important;
+      text-decoration: none;
     }
 
     a.button:hover:hover {
-      background-color: #f8f9fa !important;
+      background-color: var(--light-gray) !important;
     }
 
     .button-container {
       margin: 0 1rem 0.5rem;
-      background-color: #f8f9fa;
+      background-color: var(--light-gray);
       border-bottom: 1px dotted #000;
       box-sizing: border-box;
     }
