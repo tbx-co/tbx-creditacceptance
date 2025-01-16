@@ -345,6 +345,33 @@ header .nav-tools li > a {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
+
+  /* Secondary Nav */
+  .nav-secondary {
+    position: absolute;
+    top: calc(var(--nav-height) + 4px);
+    background-color: white;
+    min-width: 600px;
+    left: 0;
+    
+    a.button:any-link{
+      padding: .5rem 0;
+      font-family: var(--ff-acceptance-demi-bold);
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.87);
+      line-height: 24px;
+      text-align: left;
+    }
+
+    .columns > div {
+      gap:0;
+
+      > div {
+        padding: 0 1rem;
+        background-color: #f8f9fa;
+      }
+    }
+  }
 }
 
 
