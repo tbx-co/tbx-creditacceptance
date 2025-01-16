@@ -497,7 +497,12 @@ function decorateSections(main) {
           // style name is appended to div.section
           styles.forEach((style) => section.classList.add(style));
         } else if (key === 'background') {
-          sectionOuter.dataset[toCamelCase(key)] = meta[key];
+          if (meta[key].startsWith('http')) {
+            const style = `background-image: url(${meta[key]}); background-repeat: no-repeat; background-size: cover;`;
+            sectionOuter.style = style;
+          } else {
+            sectionOuter.style.backgroundColor = meta[key];
+          }
         } else {
           sectionOuter.dataset[toCamelCase(key)] = meta[key].toLowerCase().trim().replaceAll(' ', '-');
         }

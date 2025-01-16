@@ -283,7 +283,8 @@ main img {
 main > .section-outer > .section,
 footer .section-outer > .section {
   max-width: 100%;
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 main > .section-outer > .section.width-100 {
