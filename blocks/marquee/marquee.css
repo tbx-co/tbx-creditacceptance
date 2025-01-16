@@ -101,8 +101,7 @@ main > .section-outer > .section.marquee-container {
 } */
 
 /* TODO: This MQ is unconventional */
-@media screen and (min-width: 960px) {
-
+@media screen and (width >= 960px) {
     .marquee .foreground {
         display: flex;
         align-items: center;
