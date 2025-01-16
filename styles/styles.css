@@ -293,7 +293,8 @@ main img {
 
 /* sections */
 main > .section-outer > .section,
-.block .container {
+footer .section-outer > .section,
+.block .container, {
   max-width: 100%;
   margin: 40px auto;
 }
@@ -311,23 +312,38 @@ main > .section-outer > .section.width-75 > div {
 }
 
 @media screen and (width >= 576px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 540px;
-    }
+  main > .section-outer > .section,
+  footer .section-outer > .section,
+  .block .container {
+    max-width: 540px;
+  }
 }
 
 @media screen and (width >= 768px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 720px;
-    }
+   main > .section-outer > .section,
+   footer .section-outer > .section,
+   .block .container  {
+    max-width: 720px;
+  }
 }
 
 @media screen and (width >= 992px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 960px;
+   main > .section-outer > .section,
+   footer .section-outer > .section,
+   .block .container {
+    max-width: 960px;
+  }
+}
+
+/* TODO: This MQ is unconventional */
+@media screen and (width >= 960px) {
+    .block .background .mobile-only,
+    .block .background .tablet-only {
+        display: none;
+    }
+
+    .block .background .desktop-only {
+        display: block;
     }
 }
 
@@ -344,17 +360,19 @@ main > .section-outer > .section.width-75 > div {
 }
 
 @media screen and (width >= 1200px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 1140px;
-    }
+   main > .section-outer > .section,
+   footer .section-outer > .section,
+   .block .container  {
+    max-width: 1140px;
+  }
 }
 
 @media screen and (width >= 1400px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 1320px;
-    }
+   main > .section-outer > .section,
+   footer .section-outer > .section,
+   .block .container  {
+    max-width: 1320px;
+  }
 }
 
 /* section metadata */
