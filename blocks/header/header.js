@@ -106,10 +106,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 function loadSecondaryNavFragment(navChildFragmentLink, secondaryNav) {
   const navChildFragmentPath = navChildFragmentLink.getAttribute('href');
   loadFragment(navChildFragmentPath).then((fragment) => {
-    const columns = fragment.querySelectorAll('.columns');
-    if (columns.length) {
-      secondaryNav.append(columns[0]);
-    }
+    secondaryNav.append(fragment);
   });
 }
 
@@ -145,7 +142,7 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      //wrap the content within the navSection in a span
+      // wrap the content within the navSection in a span
       const navSectionContent = navSection.innerHTML;
       navSection.innerHTML = '';
       const navSectionContentWrapper = document.createElement('span');
