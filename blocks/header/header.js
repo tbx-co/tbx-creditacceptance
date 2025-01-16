@@ -174,10 +174,24 @@ export default async function decorate(block) {
         }
       });
 
-      navSection.addEventListener('mouseleave', () => {
-        if (isDesktop.matches) {
+      navSection.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (isDesktop.matches && !navSection.contains(e.target)) {
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((otherNavSection) => {
+        if (otherNavSection !== navSection) {
+          otherNavSection.addEventListener('mouseenter', () => {
+            if (isDesktop.matches) {
+              navSection.setAttribute('aria-expanded', 'false');
+            }
+          });
         }
       });
     });
