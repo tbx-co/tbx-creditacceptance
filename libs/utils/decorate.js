@@ -1,5 +1,16 @@
 // Shared block decorate functions
 
+/**
+ * Decorates buttons within a given element by adding
+ * appropriate classes based on their parent elements.
+ *
+ * The function searches for buttons within the provided element that
+ * match the selectors 'em a', 'strong a', and 'p > a strong'.
+ * It then assigns classes to these buttons based on their parent elements
+ * and any custom classes found in the button text.
+ *
+ * @param {HTMLElement} el - The element within which to search for and decorate buttons.
+ */
 export function decorateButtons(el) {
   const buttons = el.querySelectorAll('em a, strong a, p > a strong');
   if (buttons.length === 0) return;
@@ -53,7 +64,16 @@ export function handleFocalpoint(pic, child, removeChild) {
   image.style.objectPosition = `${x} ${y}`;
 }
 
-
+/**
+ * Decorates a block background by adding classes and handling focal points for images or videos.
+ *
+ * @param {HTMLElement} block - The block element to decorate.
+ * @param {HTMLElement} node - The node containing child elements to be processed.
+ * @param {Object} [options] - Optional settings.
+ * @param {boolean} [options.useHandleFocalpoint=false] - Whether to handle focal points for images.
+ * @param {string} [options.className='background'] - The class name to add to the node.
+ * @returns {Promise<void>} A promise that resolves when the decoration is complete.
+ */
 export async function decorateBlockBg(block, node, { useHandleFocalpoint = false, className = 'background' } = {}) {
   const childCount = node.childElementCount;
   if (node.querySelector('img, video') || childCount > 1) {
