@@ -347,18 +347,6 @@ main > .section-outer > .section.width-75 > div {
     }
 }
 
-/* TODO: This MQ is unconventional */
-@media screen and (width >= 960px) {
-    .block .background .mobile-only,
-    .block .background .tablet-only {
-        display: none;
-    }
-
-    .block .background .desktop-only {
-        display: block;
-    }
-}
-
 @media screen and (width >= 1200px) {
    main > .section-outer > .section,
    footer .section-outer > .section,
