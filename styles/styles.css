@@ -265,7 +265,7 @@ button.secondary:hover {
   color: var(--secondary-btn-border-hover);
 }
 
-a.button.primary.blue{
+a.button.primary.blue {
     background-color: var(--buton-bg-blue);
 }
 
@@ -286,31 +286,8 @@ main img {
   width: 100%;
 }
 
-/* blocks */
-.block .background {
-    overflow: hidden;
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-}
-
-.block .background > div p { 
-    margin: 0;
-    height: 100%; 
-}
-
-.block .background > div { height: 100%; }
-
-.block .background img,
-.block .background video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: center top;
-}
-
-.block .background .tablet-only,
-.block .background .desktop-only {
+.marquee .background .tablet-only,
+.marquee .background .desktop-only {
     display: none;
 }
 
@@ -333,42 +310,29 @@ main > .section-outer > .section.width-75 > div {
   width: 75%;
 }
 
-@media screen and (width >= 576px) {
+@media screen and (min-width: 576px) {
     main > .section-outer > .section,
     .block .container {
         max-width: 540px;
     }
 }
 
-@media screen and (width >= 768px) {
+@media screen and (min-width: 768px) {
     main > .section-outer > .section,
     .block .container {
         max-width: 720px;
     }
-
-    .block .background .mobile-only,
-    .block .background .desktop-only {
-        display: none;
-    }
-
-    .block .background .tablet-only {
-        display: block;
-    }
 }
 
-@media screen and (width >= 992px) {
+@media screen and (min-width: 992px) {
     main > .section-outer > .section,
     .block .container {
         max-width: 960px;
     }
 }
 
-@media screen and (width >= 1200px) {
-    main > .section-outer > .section,
-    .block .container {
-        max-width: 1140px;
-    }
-
+/* TODO: This MQ is unconventional */
+@media screen and (min-width: 960px) {
     .block .background .mobile-only,
     .block .background .tablet-only {
         display: none;
@@ -379,7 +343,14 @@ main > .section-outer > .section.width-75 > div {
     }
 }
 
-@media screen and (width >= 1400px) {
+@media screen and (min-width: 1200px) {
+    main > .section-outer > .section,
+    .block .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
     main > .section-outer > .section,
     .block .container {
         max-width: 1320px;

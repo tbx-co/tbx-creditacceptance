@@ -7,7 +7,7 @@ export function decorateButtons(el) {
   buttons.forEach((button) => {
     let target = button;
     const parent = button.parentElement;
-    const buttonType = buttonTypeMap[parent.nodeName] || 'outline';
+    const buttonType = buttonTypeMap[parent.nodeName] || 'primary';
     if (button.nodeName === 'STRONG') {
       target = parent;
     } else {
@@ -15,13 +15,10 @@ export function decorateButtons(el) {
       parent.remove();
     }
     target.classList.add('button', buttonType);
-    const customClasses = target.href && [...target.href.matchAll(/#_button-([a-zA-Z-]+)/g)];
+    const customClasses = target.textContent && [...target.textContent.matchAll(/#_button-([a-zA-Z-]+)/g)];
     if (customClasses) {
       customClasses.forEach((match) => {
-        target.href = target.href.replace(match[0], '');
-        if (target.dataset.modalHash) {
-          target.setAttribute('data-modal-hash', target.dataset.modalHash.replace(match[0], ''));
-        }
+        target.textContent = target.textContent.replace(match[0], '');
         target.classList.add(match[1]);
       });
     }

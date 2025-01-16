@@ -26,7 +26,6 @@ export default function decorate(block) {
   const children = block.querySelectorAll(':scope > div');
   const foreground = children[children.length - 1];
   if (children.length > 1) {
-    children[0].classList.add('background');
     decorateBlockBg(block, children[0], { useHandleFocalpoint: true });
   }
   foreground.classList.add('foreground', 'container');
