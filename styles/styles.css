@@ -54,7 +54,7 @@
   --secondary-btn-border: #2b4361;
   --secondary-btn-border-hover: #0A293B;
   --very-light-gray: #fcfcfc;
-  --buton-bg-blue: #c4eefa;
+  --button-bg-blue: #c4eefa;
 
   /* fonts */
   --body-font-family: 'Visibly Regular', visby-regular-fallback, sans-serif;
@@ -266,7 +266,7 @@ button.secondary:hover {
 }
 
 a.button.primary.blue {
-    background-color: var(--buton-bg-blue);
+    background-color: var(--button-bg-blue);
 }
 
 main img {
