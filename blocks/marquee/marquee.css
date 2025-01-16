@@ -92,6 +92,17 @@ main > .section-outer > .section.marquee-container {
     max-width: 100%;
 }
 
+.marquee.height-auto .background {
+    height: unset;
+}
+
+/* Mobile only */
+@media screen and (width <= 959px) {
+    .marquee.height-auto-mobile .background {
+        height: unset;
+    }
+}
+
 /* @media screen and (width >= 576px) {
     .marquee {}
 }
@@ -117,6 +128,10 @@ main > .section-outer > .section.marquee-container {
     
     .marquee.max-width-100-desktop .foreground > div {
         max-width: 100%;
+    }
+    
+    .marquee.height-auto-desktop .background {
+        height: unset;
     }
 }
 
