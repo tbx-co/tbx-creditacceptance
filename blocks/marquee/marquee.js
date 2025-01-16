@@ -1,24 +1,31 @@
 import { createTag } from '../../libs/utils/utils.js';
 import { decorateBlockBg, decorateButtons } from '../../libs/utils/decorate.js';
 
+const palette = {
+  'brand-blue-light': 'rgb(15, 125, 156)',
+  'brand-blue': 'rgb(13, 93, 115)',
+  'brand-blue-dark': 'rgb(43, 67, 97)',
+  'brand-red': 'rgb(179, 71, 0)',
+};
+
 function decorateIntro(el) {
   const heading = el.querySelector('h1, h2, h3, h4, h5, h6');
   if (!heading) return;
   const intro = heading.previousElementSibling;
   if (!intro) return;
   intro.classList.add('intro');
-  const [text, colorsArray] = intro.textContent.trim().split('{');
+  const [text, color] = intro.textContent.trim().split('{');
   intro.innerHTML = '';
   const label = createTag('span', null, text.trim());
   const border = createTag('div');
   intro.appendChild(label);
   intro.appendChild(border);
-  if (colorsArray) {
-    const colors = colorsArray.replace('}', '').split(',');
-    const [bgColor, txtColor] = colors;
-    label.style.color = txtColor || '#ffffff';
-    label.style.backgroundColor = bgColor;
-    border.style.backgroundColor = bgColor;
+  if (color) {
+    let colorStr = color.replace('}', '');
+    if (colorStr === 'black' || palette[colorStr]) label.style.color = '#ffffff';
+    if (palette[colorStr]) colorStr = palette[colorStr];
+    label.style.backgroundColor = colorStr;
+    border.style.backgroundColor = colorStr;
   }
 }
 
