@@ -9,6 +9,12 @@ main > .section-outer > .section.marquee-container {
     padding: 0;
 }
 
+.marquee {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
 .marquee, 
 .marquee p {
     color: white;
@@ -18,17 +24,13 @@ main > .section-outer > .section.marquee-container {
 .marquee.dark-text p {
     color: black;
 }
-
-.marquee {
-    position: relative;
-    color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-}
-
 /* background */
 .marquee .background {
     height: 470px;
+}
+
+.marquee .background picture {
+    display: initial;
 }
 
 .marquee .background > div,
@@ -54,7 +56,7 @@ main > .section-outer > .section.marquee-container {
 }
 
 .marquee p.intro {
-    color: var(--bs-black);
+    color: black;
     margin-bottom: 1rem;
 }
 
