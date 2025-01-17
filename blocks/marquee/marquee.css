@@ -24,6 +24,7 @@ main > .section-outer > .section.marquee-container {
 .marquee.dark-text p {
     color: black;
 }
+
 /* background */
 .marquee .background {
     height: 470px;
