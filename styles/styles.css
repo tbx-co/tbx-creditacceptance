@@ -185,6 +185,10 @@ button {
   font: inherit;
 }
 
+.light-text {
+  color: var(--light-color);
+}
+
 /* links */
 a:any-link {
   color: var(--link-color);

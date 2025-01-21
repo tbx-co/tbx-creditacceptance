@@ -1,5 +1,12 @@
 // Shared block decorate functions
 
+export const palette = {
+  'brand-blue-light': 'rgb(15, 125, 156)',
+  'brand-blue': 'rgb(13, 93, 115)',
+  'brand-blue-dark': 'rgb(43, 67, 97)',
+  'brand-red': 'rgb(179, 71, 0)',
+};
+
 /**
  * Decorates buttons within a given element by adding
  * appropriate classes based on their parent elements.
