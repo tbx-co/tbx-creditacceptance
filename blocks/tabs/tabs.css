@@ -3,7 +3,7 @@
     --tabs-border-color: #d8d8d8;
     --tabs-border-hover-color: #acacac;
     --tabs-text-color: #2C2C2C;
-    --tabs-active-text-color: #0000;
+    --tabs-active-text-color: #000;
     --tabs-bg-color: #f1f1f1;
     --tabs-active-bg-color: #fff;
     --tabs-list-bg-gradient: linear-gradient(rgb(200 200 200 / 0%) 10%, rgb(200 200 200 / 90%));
@@ -113,7 +113,7 @@ main > .section-outer > .section.tabs-container {
     background: var(--tabs-list-btn-color);
     border-radius: 4px 4px 0 0;
     border: 1px solid transparent;
-    color: var(--tabs-text-color);
+    color: var(--tabs-active-text-color);
     cursor: pointer;
     float: left;
     font-family: var(--heading-font-family);
