@@ -1,5 +1,5 @@
 import { createTag } from '../../libs/utils/utils.js';
-import { decorateBlockBg, decorateButtons, palette } from '../../libs/utils/decorate.js';
+import { decorateBlockBg, palette } from '../../libs/utils/decorate.js';
 
 function decorateIntro(el) {
   const heading = el.querySelector('h1, h2, h3, h4, h5, h6');
@@ -30,7 +30,6 @@ export default function decorate(block) {
   }
   foreground.classList.add('foreground', 'container');
   decorateIntro(foreground);
-  decorateButtons(foreground);
   const buttons = foreground.querySelectorAll('.button');
   buttons.forEach((button) => {
     const actionArea = button.closest('p, div');

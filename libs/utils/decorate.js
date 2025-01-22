@@ -16,7 +16,7 @@ export const palette = {
  * It then assigns classes to these buttons based on their parent elements
  * and any custom classes found in the button text.
  *
- * @param {HTMLElement} el - The element within which to search for and decorate buttons.
+ * @param {HTMLElement} el - container element
  */
 export function decorateButtons(el) {
   const buttons = el.querySelectorAll('em a, strong a, p > a strong');
@@ -40,6 +40,7 @@ export function decorateButtons(el) {
         target.classList.add(match[1]);
       });
     }
+    button.parentElement?.classList.add('button-container');
   });
 }
 
