@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { palette } from '../libs/utils/decorate.js';
+import { palette, isImagePath } from '../libs/utils/decorate.js';
 
 /* eslint-env browser */
 function sampleRUM(checkpoint, data) {
@@ -503,8 +503,8 @@ function decorateSections(main) {
           // style name is appended to div.section
           styles.forEach((style) => section.classList.add(style));
         } else if (key === 'background') {
-          console.log('meta bg key', meta[key]);
-          if (meta[key].startsWith('http')) {
+          const urlIsImg = isImagePath(meta[key]);
+          if (urlIsImg) {
             const style = `background-image: url(${meta[key]}); background-repeat: no-repeat; background-size: cover;`;
             sectionOuter.style = style;
           } else {

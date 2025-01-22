@@ -8,6 +8,18 @@ export const palette = {
 };
 
 /**
+ * Checks if a given URL points to an image file.
+ *
+ * @param {string} url - The URL to check.
+ * @returns {boolean} - Returns `true` if the URL points to an image file, otherwise `false`.
+ */
+export function isImagePath(url) {
+  if (!url) return false;
+  const urlWithoutParams = url.split('?')[0];
+  return /\.(jpg|jpeg|png|gif|bmp|svg|webp)$/i.test(urlWithoutParams);
+}
+
+/**
  * Decorates buttons within a given element by adding
  * appropriate classes based on their parent elements.
  *
