@@ -5,6 +5,11 @@ body.blog-page {
         margin: 10px auto 0;
     }
 
+    img:first-of-type {
+        max-width: unset;
+        width: 100%;
+    }
+
     @media screen and (width < 992px) {
         main>.section-outer>.section,
         footer .section-outer>.section,
