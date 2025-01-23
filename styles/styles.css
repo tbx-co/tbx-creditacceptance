@@ -19,10 +19,6 @@
   --soft-gray: #DBDBD6;
   --soft-white: #FCFCFA;
   --medium-gray: #DADADA;
-  --gold: #ffb800;
-  --mustard: #cf9400;
-  --secondary-btn-border: #2b4361;
-  --secondary-btn-border-hover: #0A293B;
   --very-light-gray: #fcfcfc;
   --black-olive: #171714;
   --pure-white: #fff;
@@ -31,14 +27,22 @@
   --secondary-brown: #e8e8e0;
   --credit-violet: #14A1C8;
   --credit-indigo: #2b4361;
-  --button-bg-blue: #c4eefa;
   --orange: #fa6400;
 
   /* link text color */
   --link-text-color: hsl(193deg 82% 34%);
   --link-text-color-hover: hsl(193deg 82% 20%);
+  --link-text-color-visited: hsl(193deg 82% 20%);
   --link-text-color-dark: hsl(193deg 82% 65%);
   --link-text-color-hover-dark: hsl(193deg 82% 75%);
+
+  /* buttons */
+  --btn-primary-bg: hsl(43deg 100% 50%);
+  --btn-primary-bg-hover: hsl(43deg 100% 41%);
+  --btn-primary-blue-bg: hsl(193deg 84% 87%);
+  --btn-primary-blue-bg-hover: hsl(193deg 84% 80%);
+  --btn-secondary-border: #2b4361;
+  --btn-secondary-border-hover: #0A293B;
 
   /* fonts */
   --body-font-family: 'Visibly Regular', visby-regular-fallback, sans-serif;
@@ -199,14 +203,20 @@ button {
 }
 
 /* links */
-a:any-link {
+a {
   color: var(--link-text-color);
   font-weight: 700;
   text-decoration: none;
 }
 
-a:any-link:hover,
-a:any-link:focus {
+a:visited,
+a:visited:hover {
+  color: var(--link-text-color-visited);
+}
+
+a:hover,
+a:focus,
+a:active {
   color: var(--link-text-color-hover);
   text-decoration: underline;
 }
@@ -216,13 +226,13 @@ a:any-link:focus {
   color: var(--light-color);
 }
 
-:root .light-text a:any-link {
+:root .light-text a {
   --link-text-color: var(--link-text-color-dark);
   --link-text-color-hover: var(--link-text-color-hover-dark);
 }
 
 /* buttons */
-a.button:any-link,
+a.button,
 button {
   display: inline-block;
   max-width: 100%;
@@ -238,20 +248,12 @@ button {
   white-space: nowrap;
 }
 
-a.button.primary {
-  background-color: var(--gold);
-  color: var(--text-color);
-  border: 1px solid rgba(255 255 255 0%);
-  padding: .5rem 1.5rem;
-  border-radius: .375rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--mustard);
+  background-color: var(--btn-primary-bg-hover);
+  color: var(--text-color);
 }
 
 button:disabled,
@@ -260,12 +262,34 @@ button:disabled:hover {
   cursor: unset;
 }
 
+
+
+a.button.primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(255 255 255 0%);
+  padding: .5rem 1.5rem;
+  border-radius: .375rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+a.button.primary.blue {
+  background-color: var(--btn-primary-blue-bg);
+}
+
+a.button.primary.blue:focus,
+button.primary.blue:focus,
+a.button.primary.blue:hover,
+button.primary.blue:hover {
+  background-color: var(--btn-primary-blue-bg-hover);
+}
+
 a.button.secondary,
 button.secondary {
-  border: 2px solid var(--secondary-btn-border);
+  border: 2px solid var(--btn-secondary-border);
   border-radius: 19px;
   background-color: var(--very-light-gray);
-  color: var(--secondary-btn-border);
+  color: var(--btn-secondary-border);
   padding: .3rem 2rem;
   transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out; /* Add transition for smooth effect */
 }
@@ -274,12 +298,8 @@ a.button.secondary:focus,
 button.secondary:focus,
 a.button.secondary:hover,
 button.secondary:hover {
-  box-shadow: 0 0 0 1px var(--secondary-btn-border-hover); /* Simulate border increase */
-  color: var(--secondary-btn-border-hover);
-}
-
-a.button.primary.blue {
-  background-color: var(--button-bg-blue);
+  box-shadow: 0 0 0 1px var(--btn-secondary-border-hover); /* Simulate border increase */
+  color: var(--btn-secondary-border-hover);
 }
 
 main img {
