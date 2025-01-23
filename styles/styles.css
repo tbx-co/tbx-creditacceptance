@@ -330,7 +330,7 @@ footer .section-outer > .section,
 .block .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 main > .section-outer > .section.width-100 {
@@ -349,6 +349,11 @@ main > .section-outer > .section.width-75 > div {
 main > .section-outer > .section.spacing-0 {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+main > .section-outer > .section.spacing-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 main > .section-outer > .section.spacing-2 {
