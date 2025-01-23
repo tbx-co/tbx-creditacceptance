@@ -102,7 +102,6 @@ main > .section-outer > .section.tabs-container {
 
 .tab-content [role='tabpanel'] .section {
     position: relative;
-    min-height: 260px;
 }
 
 .tab-content [role='tabpanel'] .section picture.section-background {
