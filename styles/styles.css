@@ -209,16 +209,16 @@ a {
   text-decoration: none;
 }
 
-a:visited,
-a:visited:hover {
-  color: var(--link-text-color-visited);
-}
-
 a:hover,
 a:focus,
 a:active {
   color: var(--link-text-color-hover);
   text-decoration: underline;
+}
+
+a:visited,
+a:visited:hover {
+  color: var(--link-text-color-visited);
 }
 
 .light-text,
