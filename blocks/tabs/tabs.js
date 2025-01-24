@@ -1,5 +1,5 @@
 /*
- * tabs - consonant v6
+ * tabs.js
  * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role
  */
 import { createTag } from '../../libs/utils/utils.js';
