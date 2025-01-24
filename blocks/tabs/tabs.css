@@ -70,16 +70,8 @@ main > .section-outer > .section.tabs-container {
     display: flex;
     gap: .5rem;
     width: 100%;
-}
-
-.tabs div[role="tablist"] .tab-list-container,
-.tabs .tab-content-container {
     margin: 0 1rem;
     max-width: var(--container-width);
-}
-
-.tabs .tab-content-container {
-    margin-block-start: 2rem;
 }
 
 /* center tabs */
@@ -94,23 +86,9 @@ main > .section-outer > .section.tabs-container {
 }
 
 /* contained tabs content */
-[role='tabpanel'] > .section > .content,
-.tabs.contained .tab-content .tab-content-container {
+[role='tabpanel'] > .section > .content {
     width: var(--container-width);
     margin: 0 auto;
-}
-
-.tab-content [role='tabpanel'] .section {
-    position: relative;
-}
-
-.tab-content [role='tabpanel'] .section picture.section-background {
-    z-index: 0;
-}
-
-.tab-content [role='tabpanel'] .section > .content {
-    z-index: 1;
-    position: relative;
 }
 
 .tabs div[role="tablist"] button {
@@ -160,8 +138,7 @@ main > .section-outer > .section.tabs-container {
 }
   
 @media screen and (width >= 576px) {
-    .tabs div[role="tablist"] .tab-list-container,
-    .tabs .tab-content-container {
+    .tabs div[role="tablist"] .tab-list-container {
         margin-left: auto;
         margin-right: auto;
     }

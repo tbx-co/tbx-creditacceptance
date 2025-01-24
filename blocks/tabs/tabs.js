@@ -25,18 +25,17 @@ const scrollTabIntoView = (e, inline = 'center') => {
 function changeTabs(e) {
   const { target } = e;
   const parent = target.parentNode;
-  const content = parent.parentNode.parentNode.lastElementChild;
-  const targetContent = content.querySelector(`#${target.getAttribute('aria-controls')}`);
+  const targetContent = document.querySelector(`#${target.getAttribute('aria-controls')}`);
   const blockId = target.closest('.tabs').id;
   parent
     .querySelectorAll(`[aria-selected="true"][data-block-id="${blockId}"]`)
     .forEach((t) => t.setAttribute('aria-selected', false));
   target.setAttribute('aria-selected', true);
   scrollTabIntoView(target);
-  content
+  document
     .querySelectorAll(`[role="tabpanel"][data-block-id="${blockId}"]`)
     .forEach((p) => p.setAttribute('hidden', true));
-  targetContent.removeAttribute('hidden');
+  targetContent?.removeAttribute('hidden');
 }
 
 function getStringKeyName(str) {
@@ -61,6 +60,27 @@ function configTabs(config, rootElem) {
   const dashIndex = tabParam.lastIndexOf('-');
   const [tabsId, tabIndex] = [tabParam.substring(0, dashIndex), tabParam.substring(dashIndex + 1)];
   if (tabsId === config.id) rootElem.querySelector(`#tab-${config.id}-${tabIndex}`)?.click();
+}
+
+function decorateTabSections(rootElem) {
+  // Tab Sections
+  const tabsMeta = rootElem.querySelectorAll('main .section .tabs-metadata');
+  tabsMeta.forEach((meta, i) => {
+    const section = meta.closest('.section-outer');
+    const data = {};
+    meta.querySelectorAll(':scope > div').forEach((row) => {
+      data[row.children[0].textContent] = row.children[1].textContent;
+    });
+    meta.style.display = 'none';
+    if (data.id !== null && data.section !== null) {
+      section.id = `tab-panel-${data.id}-${data.section}`;
+      section.setAttribute('role', 'tabpanel');
+      section.classList.add('tabpanel');
+      section.setAttribute('aria-labelledby', `tab-${data.id}-${data.section}`);
+      section.setAttribute('data-block-id', `tabs-${data.id}`);
+      if (i > 0) section.setAttribute('hidden', '');
+    }
+  });
 }
 
 function initTabs(elm, config, rootElem) {
@@ -88,10 +108,11 @@ function initTabs(elm, config, rootElem) {
     tab.addEventListener('click', changeTabs);
   });
   if (config) configTabs(config, rootElem);
+  decorateTabSections(rootElem);
 }
 
 const init = (block) => {
-  const rootElem = block.closest('.fragment') || document;
+  const rootElem = document;
   const rows = block.querySelectorAll(':scope > div');
   const parentSection = block.closest('.section');
   /* c8 ignore next */
@@ -111,11 +132,6 @@ const init = (block) => {
   config['tab-id'] = tabId;
   block.id = `tabs-${tabId}`;
   parentSection?.classList.add(`tablist-${tabId}-section`);
-
-  // Tab Content
-  const tabContentContainer = createTag('div', { class: 'tab-content-container' });
-  const tabContent = createTag('div', { class: 'tab-content' }, tabContentContainer);
-  block.append(tabContent);
 
   // Tab List
   const tabList = rows[0];
@@ -139,40 +155,9 @@ const init = (block) => {
       const tabBtn = createTag('button', tabBtnAttributes);
       tabBtn.innerText = item.textContent;
       tabListContainer.append(tabBtn);
-
-      const tabContentAttributes = {
-        id: `tab-panel-${tabId}-${tabName}`,
-        role: 'tabpanel',
-        class: 'tabpanel',
-        'aria-labelledby': `tab-${tabId}-${tabName}`,
-        'data-block-id': `tabs-${tabId}`,
-      };
-      const tabListContent = createTag('div', tabContentAttributes);
-      tabListContent.setAttribute('aria-labelledby', `tab-${tabId}-${tabName}`);
-      if (i > 0) tabListContent.setAttribute('hidden', '');
-      tabContentContainer.append(tabListContent);
     });
     tabListItems[0].parentElement.remove();
   }
-
-  // Tab Sections
-  const allSections = Array.from(rootElem.querySelectorAll('div.section'));
-  allSections.forEach((e) => {
-    const tabsMetadata = e.querySelector(':scope .tabs-metadata');
-    if (!tabsMetadata) return;
-    const metaRows = tabsMetadata.querySelectorAll(':scope > div');
-    const data = {};
-    metaRows.forEach((row) => {
-      data[row.children[0].textContent] = row.children[1].textContent;
-    });
-    const assocTabItem = rootElem.querySelector(`#tab-panel-${data.id}-${data.section}`);
-    if (assocTabItem) {
-      const section = tabsMetadata.closest('.section');
-      assocTabItem.append(section);
-    }
-    tabsMetadata.style.display = 'none';
-  });
-
   initTabs(block, config, rootElem);
 };
 
