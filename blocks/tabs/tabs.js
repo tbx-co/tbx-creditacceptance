@@ -65,7 +65,7 @@ function configTabs(config, rootElem) {
 function decorateTabSections(rootElem) {
   // Tab Sections
   const tabsMeta = rootElem.querySelectorAll('main .section .tabs-metadata');
-  tabsMeta.forEach((meta, i) => {
+  tabsMeta.forEach((meta) => {
     const section = meta.closest('.section-outer');
     const data = {};
     meta.querySelectorAll(':scope > div').forEach((row) => {
@@ -78,7 +78,7 @@ function decorateTabSections(rootElem) {
       section.classList.add('tabpanel');
       section.setAttribute('aria-labelledby', `tab-${data.id}-${data.section}`);
       section.setAttribute('data-block-id', `tabs-${data.id}`);
-      if (i > 0) section.setAttribute('hidden', '');
+      // if (i > 0) section.setAttribute('hidden', '');
     }
   });
 }
@@ -107,8 +107,8 @@ function initTabs(elm, config, rootElem) {
   tabs.forEach((tab) => {
     tab.addEventListener('click', changeTabs);
   });
-  if (config) configTabs(config, rootElem);
   decorateTabSections(rootElem);
+  if (config) configTabs(config, rootElem);
 }
 
 const init = (block) => {
