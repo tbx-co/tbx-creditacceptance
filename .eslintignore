@@ -1,1 +1,6 @@
 helix-importer-ui
+**/*.spec.js
+**/*.test.js
+jest.config.js
+
+.husky

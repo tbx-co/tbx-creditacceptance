@@ -5,3 +5,10 @@ LICENSE
 package.json
 package-lock.json
 test/*
+
+.babelrc
+jest.config.js
+**/*.spec.js
+**/*.test.js
+
+.husky
