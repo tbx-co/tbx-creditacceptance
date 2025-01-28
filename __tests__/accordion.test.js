@@ -1,8 +1,8 @@
-import init from './accordion.js';
-import { createTag } from '../../libs/utils/utils.js';
-import { loadFragment } from '../fragment/fragment.js';
+import init from '../blocks/accordion/accordion.js';
+import { createTag } from '../libs/utils/utils.js';
+import { loadFragment } from '../blocks/fragment/fragment.js';
 
-jest.mock('../../libs/utils/utils.js', () => ({
+jest.mock('../libs/utils/utils.js', () => ({
   createTag: jest.fn((tag, attributes = {}, content = '') => {
     const element = global.document.createElement(tag);
 
@@ -83,7 +83,7 @@ const staticAccordionContent = (fragmentPath = 'https://www.creditacceptance.com
     
 `;
 
-jest.mock('../fragment/fragment.js', () => ({
+jest.mock('../blocks/fragment/fragment.js', () => ({
   loadFragment: jest.fn((path) => {
     if (path.startsWith('/')) {
       const fragment = global.document.createElement('div');

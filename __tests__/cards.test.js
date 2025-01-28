@@ -1,8 +1,8 @@
-import decorate from './cards.js';
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { createTag } from '../../libs/utils/utils.js';
+import decorate from '../blocks/cards/cards.js';
+import { createOptimizedPicture } from '../scripts/aem.js';
+import { createTag } from '../libs/utils/utils.js';
 
-jest.mock('../../scripts/aem.js', () => ({
+jest.mock('../scripts/aem.js', () => ({
   createOptimizedPicture: jest.fn((src, alt) => {
     const img = global.document.createElement('img');
     img.src = src;
@@ -11,7 +11,7 @@ jest.mock('../../scripts/aem.js', () => ({
   }),
 }));
 
-jest.mock('../../libs/utils/utils.js', () => ({
+jest.mock('../libs/utils/utils.js', () => ({
   createTag: jest.fn((tag, attributes = {}, content = '') => {
     const element = global.document.createElement(tag);
     Object.entries(attributes).forEach(([key, value]) => {

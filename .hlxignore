@@ -8,7 +8,4 @@ test/*
 
 .babelrc
 jest.config.js
-**/*.spec.js
-**/*.test.js
-
-.husky
+__tests__
