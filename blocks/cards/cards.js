@@ -1,7 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { createTag } from '../../libs/utils/utils.js';
 
-function isDateValid(dateStr) {
+export function isDateValid(dateStr) {
   if (!dateStr || typeof dateStr !== 'string') return false;
 
   // eslint-disable-next-line no-restricted-globals
@@ -61,7 +61,14 @@ export default function decorate(block) {
     li.append(cardWrapper);
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
+
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPicture = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    const imgParentPicture = img.closest('picture');
+    imgParentPicture.replaceWith(optimizedPicture);
+    if (!imgParentPicture.classList.length) return;
+    optimizedPicture.classList.add(...imgParentPicture.classList);
+  });
   block.textContent = '';
   block.append(ul);
 }
