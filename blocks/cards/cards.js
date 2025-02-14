@@ -34,6 +34,38 @@ function addMobileSlider(block) {
   }
 }
 
+function decoratePictures(cell) {
+  const pictures = cell.querySelectorAll('picture');
+
+  const classes = ['mobile', 'tablet', 'desktop'];
+  pictures.forEach((picture, index) => {
+    const img = picture.querySelector('img');
+    const optimizedPicture = createOptimizedPicture(img.src, img.alt);
+    optimizedPicture.classList.add(`card-image-${classes[index]}`);
+    if (picture.parentNode.tagName === 'P') {
+      picture.parentNode.replaceWith(optimizedPicture);
+    } else {
+      picture.replaceWith(optimizedPicture);
+    }
+  });
+
+  switch (pictures.length) {
+    case 1:
+      cell.classList.add('one-image');
+      break;
+
+    case 2:
+      cell.classList.add('two-images');
+      break;
+
+    case 3:
+      cell.classList.add('three-images');
+      break;
+    default:
+      break;
+  }
+}
+
 export default function decorate(block) {
   const isAnimated = block.classList.contains('animation') && !block.classList.contains('animation-none');
   const ul = createTag('ul');
@@ -44,8 +76,9 @@ export default function decorate(block) {
     while (row.firstElementChild) cardWrapper.append(row.firstElementChild);
     let heading = null;
     [...cardWrapper.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) {
+      if (div.querySelector('picture')) {
         div.className = 'cards-card-image';
+        decoratePictures(div);
       } else {
         div.className = 'cards-card-body';
         const h3 = div.querySelector('h3');
@@ -76,13 +109,6 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPicture = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    const imgParentPicture = img.closest('picture');
-    imgParentPicture.replaceWith(optimizedPicture);
-    if (!imgParentPicture.classList.length) return;
-    optimizedPicture.classList.add(...imgParentPicture.classList);
-  });
   block.textContent = '';
   block.append(ul);
 
