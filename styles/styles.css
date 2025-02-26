@@ -102,6 +102,7 @@ body {
   font-size: var(--body-font-size-m);
   line-height: 1.6;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body.appear {
@@ -196,6 +197,7 @@ p {
   line-height: 1.5;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
+  overflow-wrap: break-word;
 }
 
 .center {
@@ -245,6 +247,7 @@ h1, h2, h3, h4, h5, h6, p {
 .big-icons .icon {
   width: auto;
   height: auto;
+  min-width: 25px;
 }
 
 /* Lists */
