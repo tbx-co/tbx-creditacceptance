@@ -1,18 +1,15 @@
 .embed-wrapper {
     width: 100%;
+    container-type: inline-size;
 }
 
 .embed {
   width: unset;
   text-align: center;
-  margin: 32px auto;
+  margin: 0 auto;
   max-width: 1000px;
   background-color: #fff;
   height: 100%;
-  
-  &.youtube, &.vimeo {
-    min-height: 225px;
-  }
 }
 
 .embed .embed-placeholder {
@@ -181,7 +178,7 @@ width: 1px;
   }
 }
 
-@media (width >= 600px) {
+@container (width >= 600px) {
   .embed {
       &.youtube, &.vimeo {
       min-height: 280px;
@@ -189,7 +186,7 @@ width: 1px;
   }
 }
 
-@media (width >= 768px) {
+@container (width >= 768px) {
   .embed {
       &.youtube, &.vimeo {
       min-height: 370px;
@@ -204,7 +201,7 @@ width: 1px;
   }
 }
 
-@media (width >= 1024px) {
+@container (width >= 1024px) {
   .embed {
     &.youtube, &.vimeo {
       min-height: 420px;
