@@ -3,7 +3,7 @@ import { loadFragment } from '../fragment/fragment.js';
 import { createTag } from '../../libs/utils/utils.js';
 
 const icons = {
-  user: 'https://main--creditacceptance--aemsites.aem.page/icons/user.svg',
+  user: '/icons/user.svg',
 };
 
 // media query match that indicates mobile/tablet width
