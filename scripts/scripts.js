@@ -27,6 +27,7 @@ async function loadFonts() {
   } catch (e) {
     // do nothing
   }
+  document.dispatchEvent(new CustomEvent('fontsLoaded'));
 }
 
 /**
@@ -256,6 +257,8 @@ function buildPageDivider(main) {
         el.innerText = '';
         el.classList.add('divider-thin-blue-dot');
       }
+    } else {
+      el.classList.add('disclaimer');
     }
   });
 }
@@ -486,7 +489,7 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(() => import('./delayed.js'), 3500);
   // load anything that can be postponed to the latest here
 }
 
