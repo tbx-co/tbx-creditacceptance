@@ -1,7 +1,7 @@
 {
   "project": "DA/CA Block Collection",
   "editUrlLabel": "Document Authoring",
-  "editUrlPattern": "https://da.live/edit#/tbx-co/tbx-creditacceptance/"
+  "editUrlPattern": "https://da.live/edit#/tbx-co/tbx-creditacceptance/index"
   "plugins": [
     {
       "id": "library",
